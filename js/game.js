@@ -27,7 +27,7 @@ class Game{
   takeTurn(player){
     this.turnorder.shift();
     if (player !== this.human ) {
-      setTimeout(function(){ this.computerPlayerTurn(player); }.bind(this), 1000); } else {
+      setTimeout(function(){ this.computerPlayerTurn(player); }.bind(this), 1200); } else {
         this.canvasEl.addEventListener("click",this.clickOnCard);
       }
     }
@@ -63,7 +63,6 @@ class Game{
   }
 
   renderCard(player, card){
-    console.log(player.name);
     if (player.name === "computer 1" ){
       let cardimg = new Image();
       cardimg.src = `./PNG/${card.name}.png`
@@ -81,7 +80,6 @@ class Game{
 
 
   addToCount(card){
-    console.log(card.value);
     let value;
     if (card.value === 'J') {
        value = 99 - this.count;
@@ -149,16 +147,8 @@ class Game{
 
   clickOnCard(event){
 
-
-    let top = this.canvasEl.offsetTop
-    console.log(top);
-    let elLeft = this.canvasEl.offsetLeft
-    console.log(elLeft);
     var x = event.clientX;
     var y = event.clientY;
-    console.log(event);
-    console.log(x);
-    console.log(y);
     if( (x>195 && y>580) && (x<295 && y<688) ){
       let playedCard = this.human.playCard(0,this.deck.take(1))
       this.canvasEl.removeEventListener("click", this.clickOnCard);

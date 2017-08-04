@@ -7,7 +7,7 @@ canvas{
   position: fixed;
 }
 body{
-
+ background-image: url("https://images8.alphacoders.com/370/370799.jpg");
 }
 p{
   margin-left: 35px;
@@ -26,4 +26,5 @@ aside{
   border-style: solid;
   border-width: 5px;
   margin-top: 50px;
+  background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/illust.jpg");
 }
